@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel-Vault | Project Details</title>
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-color: #0f172a; /* Deep Slate */
+            --accent-color: #3b82f6;  /* Tech Blue */
+            --bg-color: #f8fafc;      /* Light Gray-Blue background */
+            --text-main: #334155;
+            --text-light: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Header Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 20px;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px; /* Pulls the content up slightly over the header */
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Project Cards */
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        /* Tech Stack Badges */
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .badge {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* Placeholder Boxes for Media */
+        .media-placeholder {
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* Big Action Button */
+        .btn-github {
+            display: block;
+            width: max-content;
+            margin: 0 auto;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+        }
+        .btn-github:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px); /* Makes the button "lift" when hovered */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">← Back to Main Portfolio</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Sentinel-Vault</h1>
+        <p>Real-time mutual authentication to eliminate social engineering scams.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="card">
+            <h2>The Problem & Solution</h2>
+            <p>Social engineering accounts for the majority of modern bank fraud. Customers cannot verify if the person calling them is actually a bank employee, and employees struggle to verify customers without relying on easily compromised static data.</p>
+            <p><strong>Sentinel-Vault</strong> solves this by forcing a cryptographic, real-time handshake between both parties before any sensitive account actions can proceed. If the employee cannot authenticate to the customer's app, the call is instantly flagged as a scam.</p>
+            
+            <div class="tech-stack">
+                <span class="badge">Python</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Cryptography</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>System Architecture</h2>
+            <p>The sequence diagram below illustrates the 3-way handshake between the Customer Device, the Bank Dashboard, and the Sentinel-Vault Auth Server.</p>
+            
+            <div class="media-placeholder">
+                [ Insert Sequence Diagram Image Here ]
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Live Demonstration</h2>
+            <p>Watch the two-way verification process successfully intercept and block an unauthorized access attempt.</p>
+            <div class="media-placeholder">
+                [ YouTube Video Embed Will Go Here ]
+            </div>
+        </div>
+
+        <a href="#" class="btn-github">View Source Code on GitHub</a>
+
+    </main>
+
+</body>
+</html>
