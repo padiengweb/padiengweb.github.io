@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jailbreak | Project Details</title>
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-color: #0f172a; /* Deep Slate */
+            --accent-color: #3b82f6;  /* Tech Blue */
+            --bg-color: #f8fafc;      /* Light Gray-Blue background */
+            --text-main: #334155;
+            --text-light: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Header Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 20px;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px; /* Pulls the content up slightly over the header */
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Project Cards */
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        .card h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+      
+        .btn-github {
+            display: block;
+            width: max-content;
+            margin: 0 auto;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+        }
+        .btn-github:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px); /* Makes the button "lift" when hovered */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">← Back to Main Portfolio</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Jailbreak</h1>
+        <p>Intent vs. Behavior mobile malware analysis using Multimodal AI.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="card">
+            <h2>The Problem & Solution</h2>
+            <p>Traditional mobile malware analysis relies heavily on sifting through dense network logs, making it incredibly difficult to catch <strong>UI Deception</strong> and <strong>Credential Harvesting</strong>. For example, a "Flashlight" app that renders a perfect fake Apple ID login prompt might bypass legacy scanners.</p>
+            <p><strong>Jailbreak</strong> solves this by utilizing Google's Gemini 2.5 Flash AI model. It cross-references an application's visual UI (via sandbox screenshots) directly against its stated developer intent. If a basic calculator asks for banking credentials, the AI catches the behavioral mismatch and dynamically flags the threat.</p>
+            
+            <div class="tech-stack">
+                <span class="badge">Python</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Google GenAI</span>
+                <span class="badge">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>System Architecture</h2>
+            <p>The architecture flows from a local JS dashboard, piping a Multimodal Payload (Image + User Intent) through a secure FastAPI backend, and straight into the LLM for strict JSON classification.</p>
+            
+            <img src="images/jailbreak-systemArch.png" 
+                 alt="Jailbreak Multimodal AI Sequence Diagram"
+                 style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 20px;">
+        </div>
+
+        <div class="card">
+            <h2>Live Demonstration</h2>
+            <p>Watch the AI dynamically analyze a secure app's intent versus a credential-harvesting phishing attempt.</p>
+            
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://www.youtube.com/embed/1YLxUnbBVO8?si=tnAPpdJOVx_8extx" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <a href="https://github.com/padiengweb/jailbreak" target="_blank" class="btn-github">View Source Code on GitHub</a>
+
+    </main>
+
+</body>
+</html>
